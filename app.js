@@ -19,8 +19,17 @@ var seattle = {
 
 
 
-        return multiplyedByAvg;
+        // return multiplyedByAvg;
     },
+    // totalSum: function(){
+    //     var newSumSe = 0;
+    //     for (var h=0; h<this.avgCookieSoldPerHour.length ; h++){
+    //         newSumSe = newSumSe + this.avgCookieSoldPerHour[h]
+    //     }
+    //     console.log('ffff', newSumSe);
+    //     return newSumSe();
+        
+    // },
     render: function () {
         var container1 = document.getElementById('Header2');
         var h2tit = document.createElement('h2');
@@ -44,6 +53,7 @@ console.log(seattle);
 //////////////////////////
 seattle.avgCookiePerHour();
 seattle.render();
+// seattle.totalSum();
 var tokyo = {
     name: 'Tokyo',
     minCustPerHour: 3,
