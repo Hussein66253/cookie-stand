@@ -1,6 +1,5 @@
 'use strict';
 var workHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-
 var seattle = {
     name: 'Seattle',
     minCustPerHour: 23,
@@ -8,6 +7,7 @@ var seattle = {
     avgCookieSoldToCust: 6.3,
     avgCookieSoldPerHour: [],
     totalSumcookei:0, 
+
     avgCookiePerHour: function () {
         for (var i = 0; i < workHours.length; i++) {
             var randomCus = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
@@ -17,10 +17,19 @@ var seattle = {
             var CookieSoldPerhour = multiplyedByAvg;
             this.avgCookieSoldPerHour.push(CookieSoldPerhour);
         }
-
-
-
         return multiplyedByAvg;
+        
+    },
+    totalSum: function(){
+        
+        for ( var h=0; h<this.avgCookieSoldPerHour.length; h++){
+            var x = 0;
+            
+            x = x +  this.avgCookieSoldPerHour[h];
+        }
+        console.log('fsy',x);
+        return x ();
+        
     },
     totalSum: function(){
         var newSumSe = 0;
@@ -48,17 +57,22 @@ var seattle = {
             var liSe = document.createElement('li')
             ulSe.appendChild(liSe);
             liSe.textContent = `${workHours[i]}: ${this.avgCookieSoldPerHour[i]} cookies.`
+     
         }
+
         var liSe2 = document.createElement('li');
         ulSe.appendChild(liSe2);
         liSe2.textContent = `Total : ${this.totalSumcookei} cookies`
     }
 }
+
 console.log(seattle);
 seattle.avgCookiePerHour();
 seattle.totalSum();
 seattle.render();
-//////////////////////////
+
+seattle.totalSum();
+
 var tokyo = {
     name: 'Tokyo',
     minCustPerHour: 3,
