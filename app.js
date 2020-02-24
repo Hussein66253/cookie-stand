@@ -19,16 +19,7 @@ var seattle = {
         }
         return multiplyedByAvg;
         
-    },
-    totalSum: function(){
-        
-        for ( var h=0; h<this.avgCookieSoldPerHour.length; h++){
-            var x = 0;
-            
-            x = x +  this.avgCookieSoldPerHour[h];
-        }
-        console.log('fsy',x);
-        return x ();
+    
         
     },
     totalSum: function(){
