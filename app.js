@@ -11,7 +11,7 @@ var seattle = {
         for (var i = 0; i < workHours.length; i++) {
             var calc1 = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
             // console.log('calc11', calc1)
-            var multiplyedByAvg = calc1 * this.avgCookieSoldToCust;
+            var multiplyedByAvg = Math.floor(calc1 * this.avgCookieSoldToCust);
             // console.log(Math.ceil(multiplyedByAvg));
             var CookieSoldPerhour = multiplyedByAvg;
             this.avgCookieSoldPerHour.push(CookieSoldPerhour);
@@ -53,7 +53,7 @@ var tokyo = {
     avgCookiePerHour: function () {
         for (var i = 0; i < workHours.length; i++) {
             var calc1 = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
-            var multiplyedByAvg = calc1 * this.avgCookieSoldToCust;
+            var multiplyedByAvg = Math.floor(calc1 * this.avgCookieSoldToCust);
             var CookieSoldPerhour = multiplyedByAvg;
             this.avgCookieSoldPerHour.push(CookieSoldPerhour);
         }
@@ -86,7 +86,7 @@ var dubai = {
     avgCookiePerHour: function () {
         for (var i = 0; i < workHours.length; i++) {
             var calc1 = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
-            var multiplyedByAvg = calc1 * this.avgCookieSoldToCust;
+            var multiplyedByAvg = Math.floor(calc1 * this.avgCookieSoldToCust);
             var CookieSoldPerhour = multiplyedByAvg;
             this.avgCookieSoldPerHour.push(CookieSoldPerhour);
         }
@@ -122,7 +122,7 @@ var paris = {
     avgCookiePerHour: function () {
         for (var i = 0; i < workHours.length; i++) {
             var calc1 = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
-            var multiplyedByAvg = calc1 * this.avgCookieSoldToCust;
+            var multiplyedByAvg = Math.floor(calc1 * this.avgCookieSoldToCust);
             var CookieSoldPerhour = multiplyedByAvg;
             this.avgCookieSoldPerHour.push(CookieSoldPerhour);
         }
@@ -158,7 +158,7 @@ var lima = {
     avgCookiePerHour: function () {
         for (var i = 0; i < workHours.length; i++) {
             var calc1 = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
-            var multiplyedByAvg = calc1 * this.avgCookieSoldToCust;
+            var multiplyedByAvg = Math.floor(calc1 * this.avgCookieSoldToCust);
             var CookieSoldPerhour = multiplyedByAvg;
             this.avgCookieSoldPerHour.push(CookieSoldPerhour);
         }
