@@ -1,6 +1,5 @@
 'use strict';
 var workHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
-var x = 0;
 var seattle = {
     name: 'Seattle',
     minCustPerHour: 23,
@@ -21,13 +20,14 @@ var seattle = {
         
     },
     totalSum: function(){
-       
-        for ( var h=0; h<avgCookieSoldPerHour.length; h++){
+        
+        for ( var h=0; h<this.avgCookieSoldPerHour.length; h++){
+            var x = 0;
             
-            x = x +  avgCookieSoldPerHour[h];
+            x = x +  this.avgCookieSoldPerHour[h];
         }
         console.log('fsy',x);
-        return totalSumCookei();
+        return x ();
         
     },
     render: function () {
@@ -57,6 +57,7 @@ console.log(seattle);
 //////////////////////////
 seattle.avgCookiePerHour();
 seattle.render();
+seattle.totalSum();
 var tokyo = {
     name: 'Tokyo',
     minCustPerHour: 3,
