@@ -21,19 +21,68 @@ Shop.prototype.avgCookiePerHour= function () {
                     console.log(Math.ceil(multiplyedByAvg));
                     var CookieSoldPerhour = multiplyedByAvg;
                     this.avgCookieSoldPerHour.push(CookieSoldPerhour);
-                    console.log(calc1);
+                    // console.log(calc1);
                     
                 }
+            }
+ Shop.prototype.totalSum=function(){
+                    var newSumSe = 0;
+                    for (var h=0; h<this.avgCookieSoldPerHour.length ; h++){
+                        newSumSe = newSumSe + this.avgCookieSoldPerHour[h];
+                        this.totalSumcookei = newSumSe;
+                    }
+                    console.log('ffff', newSumSe);
+                    // return newSumSe();
               
-};
+
+                }
+
 Shop.prototype.render= function(){
-    var container = document.getElementsByTagName('body');
+    var container1 = document.getElementById('Header2');
+        var h2tit = document.createElement('h2');
+        container1.appendChild(h2tit);
+        h2tit.textContent= 'Salmon Cookies sales'
+        var container = document.getElementById('location1');
+        console.log(container);
+        var h1Se = document.createElement('h1');
+        container.appendChild(h1Se);
+        h1Se.textContent = this.name;
+        var ulSe = document.createElement('ul');
+        container.appendChild(ulSe);
+        for (var i = 0; i < workHours.length; i++) {
+            var liSe = document.createElement('li')
+            ulSe.appendChild(liSe);
+            liSe.textContent = `${workHours[i]}: ${this.avgCookieSoldPerHour[i]} cookies.`
+        }
+
+
+    // var container1 = document.getElementsByTagName("body");
+    // var table = document.createElement("table")
+    // table.appendChild(container1)
+    // for (x=0 ; x<workHours.length ; x++){
+    //     var tr = document.createElement('tr')
+    //     tr.appendChild(table)
+
+    this.avgCookiePerHour();
+    this.totalSum();
+  
+    }
+
+
 
     
+
+    var seattle = new Shop ('Seattle',23 , 65, 6.3 );
+    var tokyo = new Shop('tokyo' , 3 , 24 , 1.2 );
+    var dubai = new  Shop('Dubai' , 11 , 38 , 3.7 );
+    var paris = new  Shop('Paris' , 20 , 38 , 2.3 );
+    var lima = new  Shop('Lima' , 2 , 16 , 4.6 );
+
+    seattle.render();
+    // console.log(this.avgCookiePerHour);
     
-}
-    var seattle = new Shop ('Seattle',23 , 65, 6.3 )
-seattle.avgCookiePerHour();
+    // tokyo.avgCookiePerHour();
+    // console.log('this is ',seattle)
 
 // var seattle = {
 //     name: 'Seattle',
