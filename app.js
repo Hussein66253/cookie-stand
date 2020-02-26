@@ -2,7 +2,7 @@
 var workHours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
 
 var container1 = document.getElementById('location1');
-var newArr = []
+var shops = []
 function Shop(name, minCustPerHour, maxCustPerHour, avgCookieSoldToCust) {
     this.name = name;
     this.minCustPerHour = minCustPerHour;
@@ -10,7 +10,7 @@ function Shop(name, minCustPerHour, maxCustPerHour, avgCookieSoldToCust) {
     this.avgCookieSoldToCust = avgCookieSoldToCust;
     this.avgCookieSoldPerHour = [];
     this.totalSumCookei = 0;
-    newArr.push(this)
+    shops.push(this)
     // console.log(Shop);
     
 };
@@ -23,22 +23,10 @@ Shop.prototype.avgCookiePerHour = function () {
         // console.log(("++++++++"+multiplyedByAvg));
         this.avgCookieSoldPerHour[i] = multiplyedByAvg;
         // console.log("+++"+multiplyedByAvg+"+++"+this.avgCookieSoldPerHour[i]);
+        this.totalSumCookei = this.totalSumCookei + multiplyedByAvg
     }
 }
-Shop.prototype.totalSum = function () {
-    var newSumSe = 0;
-    for (var h = 0; h < this.avgCookieSoldPerHour.length; h++) {
-        newSumSe = newSumSe + this.avgCookieSoldPerHour[h];
-        // this.totalSumCookei.push(newSumSe);
-        this.totalSumcookei = newSumSe;
-    }
-    console.log('dfhdfh', this.totalSumCookei);
-    console.log('nnnnnnnnnnnn', newSumSe);
-    // return newSumSe;
 
-    
-    
-}
 
 var tableCons = document.createElement('table')
     function tableHead(){
@@ -76,29 +64,26 @@ var tableCons = document.createElement('table')
           tdTotaDaily.textContent=  this.totalSumCookei ;
     }
   
-    Shop.prototype.tablefooter= function(){
+    Shop.prototype.totalSum = function(){
         var trFooter = document.createElement('tr');
         tableCons.appendChild(trFooter);
         trFooter.textContent= 'Totals'
+    //    var totalofHourlyInEachCity=0;
         for (var f=0; f<workHours.length ; f++){
-
-            var tdTotaHourly = document.createElement('td');
-            trFooter.appendChild(tdTotaHourly);
-            for (var x=0 ; x<this.avgCookieSoldPerHour;x++){
+         var sum = 0;
+            for ( var v = 0 ; v < shops.length ; v++){
+                sum += sum + this.avgCookieSoldPerHour[f]
+                var tdfooter = document.createElement('td');
+                trFooter.appendChild(tdfooter);
+                // tdfooter.textContent= seattle.avgCookieSoldPerHour[v];
+                console.log('jjjjjj',  tdfooter);
+                
+            }
 
             }
-            tdTotaHourly.textContent=  this.avgCookieSoldPerHour[x] ;
-        }
-        // for (var fo=0 ;fo<shops.length ; fo++){
-
-        // }
-   
 
 
-    }
-
-    
-
+}
 
 
 
@@ -111,20 +96,14 @@ var dubai = new Shop('Dubai', 11, 38, 3.7);
 var paris = new Shop('Paris', 20, 38, 2.3);
 var lima = new Shop('Lima', 2, 16, 4.6);
 
-        seattle.avgCookiePerHour();
-        seattle.totalSum();
+seattle.avgCookiePerHour();
         seattle.render();
         tokyo.avgCookiePerHour();
-        tokyo.totalSum();
         tokyo.render();
         dubai.avgCookiePerHour();
-        dubai.totalSum();
         dubai.render();
         paris.avgCookiePerHour();
-        paris.totalSum();
         paris.render();
         lima.avgCookiePerHour();
-        lima.totalSum();
         lima.render();
-        
-        seattle.tablefooter();
+        seattle.totalSum();
