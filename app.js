@@ -74,11 +74,24 @@ var tableCons = document.createElement('table')
             tdTotalOfTotals.textContent =seattle.totalSumCookei + tokyo.totalSumCookei+ dubai.totalSumCookei + paris.totalSumCookei + lima.totalSumCookei;
             console.log('kjjjjj', tdTotalOfTotals);
             }
-var seattle = new Shop('Seattle', 23, 65, 6.3);
-var tokyo = new Shop('tokyo', 3, 24, 1.2);
-var dubai = new Shop('Dubai', 11, 38, 3.7);
-var paris = new Shop('Paris', 20, 38, 2.3);
-var lima = new Shop('Lima', 2, 16, 4.6);
+           
+            var addingNewShop = document.getElementById('shopsForm');
+            addingNewShop.addEventListener('submit', function(event){
+                // event.preventDefault();
+                console.log( event);
+                
+            })
+
+
+
+
+
+
+// var seattle = new Shop('Seattle', 23, 65, 6.3);
+// var tokyo = new Shop('tokyo', 3, 24, 1.2);
+// var dubai = new Shop('Dubai', 11, 38, 3.7);
+// var paris = new Shop('Paris', 20, 38, 2.3);
+// var lima = new Shop('Lima', 2, 16, 4.6);
 seattle.avgCookiePerHour();
         seattle.render();
         tokyo.avgCookiePerHour();
