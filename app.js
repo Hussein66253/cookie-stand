@@ -10,19 +10,16 @@ function Shop(name, minCustPerHour, maxCustPerHour, avgCookieSoldToCust) {
     this.avgCookieSoldToCust = avgCookieSoldToCust;
     this.avgCookieSoldPerHour = [];
     this.totalSumCookei = 0;
+    this.cookiePerHour = 0;
     shops.push(this)
-    // console.log(Shop);
     
 };
 
 Shop.prototype.avgCookiePerHour = function () {
     for (var i = 0; i < workHours.length; i++) {
         var calc1 = Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1)) + this.minCustPerHour;
-        // console.log('calc11', calc1)
         var multiplyedByAvg = Math.floor(calc1 * this.avgCookieSoldToCust);
-        // console.log(("++++++++"+multiplyedByAvg));
         this.avgCookieSoldPerHour[i] = multiplyedByAvg;
-        // console.log("+++"+multiplyedByAvg+"+++"+this.avgCookieSoldPerHour[i]);
         this.totalSumCookei = this.totalSumCookei + multiplyedByAvg
     }
 }
@@ -63,39 +60,25 @@ var tableCons = document.createElement('table')
           tr2.appendChild(tdTotaDaily);
           tdTotaDaily.textContent=  this.totalSumCookei ;
     }
-  
-    Shop.prototype.totalSum = function(){
+     function totalSum(){
         var trFooter = document.createElement('tr');
         tableCons.appendChild(trFooter);
         trFooter.textContent= 'Totals'
-    //    var totalofHourlyInEachCity=0;
-        for (var f=0; f<workHours.length ; f++){
-         var sum = 0;
-            for ( var v = 0 ; v < shops.length ; v++){
-                sum += sum + this.avgCookieSoldPerHour[f]
-                var tdfooter = document.createElement('td');
-                trFooter.appendChild(tdfooter);
-                // tdfooter.textContent= seattle.avgCookieSoldPerHour[v];
-                console.log('jjjjjj',  tdfooter);
-                
+            for(var z=0; z<workHours.length; z++){
+                var td6= document.createElement('td');
+                trFooter.appendChild(td6);
+                td6.textContent= seattle.avgCookieSoldPerHour[z] + tokyo.avgCookieSoldPerHour[z] + dubai.avgCookieSoldPerHour[z] + paris.avgCookieSoldPerHour[z] + lima.avgCookieSoldPerHour[z];
             }
-
+            var tdTotalOfTotals = document.createElement('td');
+            trFooter.appendChild(tdTotalOfTotals);
+            tdTotalOfTotals.textContent =seattle.totalSumCookei + tokyo.totalSumCookei+ dubai.totalSumCookei + paris.totalSumCookei + lima.totalSumCookei;
+            console.log('kjjjjj', tdTotalOfTotals);
             }
-
-
-}
-
-
-
-
-
-
 var seattle = new Shop('Seattle', 23, 65, 6.3);
 var tokyo = new Shop('tokyo', 3, 24, 1.2);
 var dubai = new Shop('Dubai', 11, 38, 3.7);
 var paris = new Shop('Paris', 20, 38, 2.3);
 var lima = new Shop('Lima', 2, 16, 4.6);
-
 seattle.avgCookiePerHour();
         seattle.render();
         tokyo.avgCookiePerHour();
@@ -106,4 +89,4 @@ seattle.avgCookiePerHour();
         paris.render();
         lima.avgCookiePerHour();
         lima.render();
-        seattle.totalSum();
+        totalSum();
