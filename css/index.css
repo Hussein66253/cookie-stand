@@ -51,6 +51,9 @@ body main section p {
     margin: 11%;
     
 }
+table tr td{
+  border: 2px gray;
+}
 
  p {
     font: italic;
