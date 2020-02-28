@@ -78,14 +78,13 @@ var tableCons = document.createElement('table')
          var tokyo = new Shop('tokyo', 3, 24, 1.2);
          var dubai = new Shop('Dubai', 11, 38, 3.7);
          var paris = new Shop('Paris', 20, 38, 2.3);
-           
-var lima = new Shop('Lima', 2, 16, 4.6);
-seattle.avgCookiePerHour();
-seattle.render();
-tokyo.avgCookiePerHour();
-tokyo.render();
-dubai.avgCookiePerHour();
-dubai.render();
+         var lima = new Shop('Lima', 2, 16, 4.6);
+        seattle.avgCookiePerHour();
+        seattle.render();
+        tokyo.avgCookiePerHour();
+        tokyo.render();
+        dubai.avgCookiePerHour();
+        dubai.render();
         paris.avgCookiePerHour();
         paris.render();
         lima.avgCookiePerHour();
@@ -96,5 +95,22 @@ dubai.render();
         addingNewShop.addEventListener('submit', function(event){
             event.preventDefault();
             console.log(event);
+            var name = event.target.name.value;
+            console.log(name);
+            var maxCustmerPerHour = event.target.maxCustmerPerHour.value;
+            console.log(maxCustmerPerHour);
+            var minCustPerHour = event.target.minCustPerHour.value;
+            console.log(minCustPerHour);
+            var avgCookieSoldPerHour = event.target.avgCookieSoldPerHour.value;
+            console.log(avgCookieSoldPerHour); 
+            if (maxCustmerPerHour <= minCustmerPerHour) {
+                    alert("The max Custmer Per Hour should be more than min Custmer Per Hour ")
+                }
+                else{
+                    var addingNewShop = new Shop (name,maxCustPerHour, minCustPerHour ,avgCookieSoldPerHour);
+                    console.log(addingNewShop);
+                   
+                }
+            
             
         });
