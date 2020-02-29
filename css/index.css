@@ -1,6 +1,9 @@
-
- 
- body {
+@import url('https://fonts.googleapis.com/css?family=Oxanium&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Simonetta&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans&display=swap'); 
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One&display=swap');
+body {
     position: relative;
     background-color:#f5f5f5;
     width: 960px;
@@ -34,6 +37,7 @@ body header nav ul li {
 }
 
  body header h1 {
+  font-family: 'Oxanium' ;
   text-align: center;
   font-size: x-large;
   font-weight: bolder;
@@ -44,25 +48,27 @@ body main section p {
   margin-top: 20px;
   margin-bottom: 20px;
   color: rgb(6, 8, 6);
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 #locaAndAdd {
   margin: 8%; 
   padding: 1px;   
 }
-h2 { color: #302b03; 
-  font-family: 'Source Sans Pro', sans-serif; 
+h2 { 
+  color: #302b03; 
+  font-family: 'Ubuntu' ;
   font-size: 28px; 
   font-weight: 400; 
   line-height: 32px; 
   margin: 0 0 24px; 
   }
 main ul {
+  font-family: 'Simonetta' ;
   color: rgb(101, 116, 68);
   line-height: 32px; 
   font-size: 17px; 
-
-
+}
+#info{
+  font-family: 'Fira Sans' ;
 }
 #images:hover {
   transform: scaleX(-1);
@@ -76,7 +82,7 @@ main ul {
 
 
 footer {
-               
+  font-family: 'Fjalla One' ;
   background-color: black;
   color: white;
   font-weight: bold;

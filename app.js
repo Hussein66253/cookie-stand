@@ -95,17 +95,24 @@ var tableCons = document.createElement('table')
         addingNewShop.addEventListener('submit', function(event){
             event.preventDefault();
             console.log(event);
-            var name = event.target.name.value;
-            console.log(name);
+            var shopName = event.target.shopName.value;
+            console.log(shopName);
+            var minCustmerPerHour = event.target.minCustmerPerHour.value;
+            console.log(minCustmerPerHour);
             var maxCustmerPerHour = event.target.maxCustmerPerHour.value;
             console.log(maxCustmerPerHour);
-            var minCustPerHour = event.target.minCustPerHour.value;
-            console.log(minCustPerHour);
-            var avgCookieSoldPerHour = event.target.avgCookieSoldPerHour.value;
-            console.log(avgCookieSoldPerHour); 
+            var avgCookieSoldToCust = event.target.avgCookieSoldToCust.value;
+            console.log(avgCookieSoldToCust);
             if (maxCustmerPerHour <= minCustmerPerHour) {
                     alert("The max Custmer Per Hour should be more than min Custmer Per Hour ")
                 }
-                
+            else{
+                var newShope = new Shop (shopName, minCustmerPerHour, maxCustmerPerHour, avgCookieSoldToCust)
+                console.log(newShope);
+                tableCons.removeChild(tableCons.lastChild)
+                newShope.avgCookiePerHour();
+                newShope.render();
+                totalSum();
+            } 
             
         });
