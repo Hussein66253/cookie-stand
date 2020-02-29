@@ -106,11 +106,6 @@ var tableCons = document.createElement('table')
             if (maxCustmerPerHour <= minCustmerPerHour) {
                     alert("The max Custmer Per Hour should be more than min Custmer Per Hour ")
                 }
-                else{
-                    var addingNewShop = new Shop (name,maxCustPerHour, minCustPerHour ,avgCookieSoldPerHour);
-                    console.log(addingNewShop);
-                   
-                }
-            
+                
             
         });
